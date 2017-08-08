@@ -138,9 +138,13 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_LayoutPage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Kategori\Urunler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
