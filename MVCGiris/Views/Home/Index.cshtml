@@ -1,0 +1,23 @@
+﻿@using MVCGiris.Models
+@model List<Urun>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Merhaba MVC</h1>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li id="@item.id">@item.UrunAdi - @($"{item.Fiyat:c2}")</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
