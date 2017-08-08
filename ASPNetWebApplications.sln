@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 AspnetMvc Giris", "01 As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCGiris", "MVCGiris\MVCGiris.csproj", "{6059B222-D20F-4277-A121-6BBCBA03C438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "North", "North\North.csproj", "{1B6FFB9B-C017-415B-824E-993C54132D22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{6059B222-D20F-4277-A121-6BBCBA03C438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6059B222-D20F-4277-A121-6BBCBA03C438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6059B222-D20F-4277-A121-6BBCBA03C438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6FFB9B-C017-415B-824E-993C54132D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6FFB9B-C017-415B-824E-993C54132D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6FFB9B-C017-415B-824E-993C54132D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6FFB9B-C017-415B-824E-993C54132D22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6059B222-D20F-4277-A121-6BBCBA03C438} = {11412390-E3C6-4E19-82C2-B448AF86B621}
+		{1B6FFB9B-C017-415B-824E-993C54132D22} = {11412390-E3C6-4E19-82C2-B448AF86B621}
 	EndGlobalSection
 EndGlobal

@@ -11,11 +11,7 @@ namespace MVCGiris.Models
         public string UrunAdi { get; set; }
         public decimal Fiyat { get; set; }
 
-        public static List<Urun> Urunler
-        {
-            get
-            {
-                return new List<Urun>(){
+        public static List<Urun> Urunler => new List<Urun>(){
                     new Urun()
                     {
                         id = 1,
@@ -34,8 +30,6 @@ namespace MVCGiris.Models
                         Fiyat = 14,
                         UrunAdi = "Dana Döner"
                     }};
-            }
-        }
 
     }
 }
