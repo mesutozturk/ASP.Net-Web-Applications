@@ -109,5 +109,19 @@ namespace North.Controllers
             }
             return RedirectToAction("Duzenle", new {id = urun.ProductID});
         }
+
+        public ActionResult Ara()
+        {
+            return View();
+        }
+
+        public JsonResult Bul(string key)
+        {
+            var db= new NorthwindEntities();
+            var sonuc = db.Products.Where(x => x.ProductName.ToLower().Contains(key.ToLower()) ||
+                                               x.Category.CategoryName.ToLower().Contains(key.ToLower())).ToList();
+
+            return Json(sonuc, JsonRequestBehavior.AllowGet);
+        }
     }
 }

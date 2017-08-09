@@ -9,9 +9,6 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/site.css" rel="stylesheet" />
 
-    <script src="~/Scripts/jquery-3.1.1.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/app.js"></script>
 </head>
 <body>
     <div class="container">
@@ -24,7 +21,8 @@
                 </p>
             </div>
         </div>
-        <div class="row">@*Menü*@
+        <div class="row">
+            @*Menü*@
             @{Html.RenderAction("MenuPartial", "Home");}
         </div>
         <div class="row">
@@ -36,6 +34,8 @@
             Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
         </div>
     </div>
-
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/app.js"></script>
 </body>
 </html>

@@ -180,6 +180,7 @@
     <Content Include="Views\Urun\Duzenle.cshtml" />
     <Content Include="Views\Urun\Yeni.cshtml" />
     <Content Include="Views\Shared\_PartialMenu.cshtml" />
+    <Content Include="Views\Urun\Ara.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
