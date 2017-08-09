@@ -1,0 +1,60 @@
+﻿@using North.Models;
+@model Product
+@{
+    
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<div class="col-md-8 col-md-offset-2">
+    @using (Html.BeginForm("Duzenle", "Urun", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.HiddenFor(x=>x.ProductID)
+        <fieldset>
+            <!-- Form Name -->
+            <legend>@($"{Model.ProductName} - Ürün Düzenleme")</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                @Html.LabelFor(x => x.ProductName, new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Product Name", required = "true" })
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                @Html.LabelFor(x => x.UnitPrice, new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", required = "true" })
+                </div>
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                @Html.LabelFor(x => x.Category, new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.Kategoriler,new {@class="form-control"})
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                @Html.LabelFor(x => x.UnitsInStock, new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x=>x.UnitsInStock,new {@class="form-control", required="true"})
+                </div>
+            </div>
+            <!-- Password input-->
+            <div class="form-group">
+                @Html.LabelFor(x => x.Discontinued, new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.CheckBoxFor(x=>x.Discontinued,new {@class="checkbox"})
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <input type="submit" value="Güncelle" class="btn btn-success btn-block"/>
+                </div>
+            </div>
+        </fieldset>
+    }
+
+</div>

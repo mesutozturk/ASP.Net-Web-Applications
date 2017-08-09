@@ -12,14 +12,14 @@
     }
     else
     {
-        kategoriadi = Model.FirstOrDefault().Category.CategoryName;
+        kategoriadi = Model.FirstOrDefault()?.Category.CategoryName;
     }
 }
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
     <span class="text-success">@kategoriadi</span>
     @if (Model.Count == 0)
     {
-        <br/>
+        <br />
         <a href="@Url.Action("Index","Home")" class="btn btn-lg btn-danger">Ana sayfaya geri dön</a>
     }
     else
@@ -32,22 +32,24 @@
                     <th>Fiyatı</th>
                     <th>Stok</th>
                     <th>Satışta Mı</th>
+                    <th>Düzenle</th>
                 </tr>
             </thead>
             <tbody>
                 @{ int sayac = 0;}
                 @foreach (var item in Model)
-            {
-                sayac++;
-                <tr>
-                    <td>@sayac</td>
-                    <td>@item.ProductName</td>
-                    <td>@( $"{item.UnitPrice:c2}")</td>
-                    <td>@item.UnitsInStock</td>
-                    <td>@(!item.Discontinued ? Html.Raw("<span class='text-success'>Satışta</span>") : Html.Raw("<span class='text-danger'>Satışta degil</span>"))</td>
+                {
+                    sayac++;
+                    <tr>
+                        <th scope="row">@sayac</th>
+                        <td>@item.ProductName</td>
+                        <td>@( $"{item.UnitPrice:c2}")</td>
+                        <td>@item.UnitsInStock</td>
+                        <td>@(!item.Discontinued ? Html.Raw("<span class='text-success'>Satışta</span>") : Html.Raw("<span class='text-danger'>Satışta degil</span>"))</td>
+                        <td><a href="@Url.Action("Duzenle", "Urun", new { id = item.ProductID })" class="btn btn-warning btn-block">Düzenle</a></td>
                 </tr>
-            }
+                }
             </tbody>
         </table>
-    }
+                    }
 </div>
