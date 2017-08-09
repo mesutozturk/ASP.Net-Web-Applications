@@ -24,7 +24,9 @@
                 </p>
             </div>
         </div>
-        <div class="row">@*Menü*@</div>
+        <div class="row">@*Menü*@
+            @{Html.RenderAction("MenuPartial", "Home");}
+        </div>
         <div class="row">
             @*İçerik*@
             @RenderBody()
