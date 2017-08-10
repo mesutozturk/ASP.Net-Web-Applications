@@ -14,5 +14,6 @@ namespace North.Models.ViewModels
         public decimal? UnitPrice { get; set; }
         public short? UnitsInStock { get; set; }
         public bool Discontinued { get; set; }
+
     }
 }
