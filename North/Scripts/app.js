@@ -7,7 +7,7 @@ $("#txtara").keyup(function () {
         method: "GET"
     }).done(function (response) {
         //console.log(response);
-        $("#lblmesaj").fadeIn(2000);
+        $("#lblmesaj").fadeIn(1000);
 
         if (response.length === 0) {
             $("#lblmesaj").html("Hiçbir sonuç bulunamadı");
@@ -16,7 +16,7 @@ $("#txtara").keyup(function () {
         } else {
             $("#lblmesaj").html(response.length + " Adet Sonuç Bulundu");
             $("#lblmesaj").attr("class", "label label-success");
-            $("#tblsonuc").fadeIn(2000);
+            $("#tblsonuc").fadeIn(1000);
             $("#uruntablebody").empty();
             $.each(response,
                 function (key, value) {
@@ -45,7 +45,7 @@ function urunleriekranabas(key, value) {
         $(tdsatis).html("<span class='text-success'>Satışta</span>");
     }
     var tdduzenle = document.createElement("td");
-    $(tdduzenle).html("<a href='#' class='btn btn-warning btn-block'>Düzenle</a>");
+    $(tdduzenle).html("<a href='../Urun/Duzenle/" + value.ProductID+"' class='btn btn-warning btn-block'>Düzenle</a>");
     $(tr).append(th).append(tdurunadi).append(tdfiyat).append(tdstok).append(tdsatis).append(tdduzenle)
         .appendTo($("#uruntablebody"));
 }
