@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using North.Models;
+using North.Models.ViewModels;
 
 namespace North.Controllers
 {
@@ -105,9 +106,9 @@ namespace North.Controllers
             }
             catch (Exception e)
             {
-                
+
             }
-            return RedirectToAction("Duzenle", new {id = urun.ProductID});
+            return RedirectToAction("Duzenle", new { id = urun.ProductID });
         }
 
         public ActionResult Ara()
@@ -117,9 +118,18 @@ namespace North.Controllers
 
         public JsonResult Bul(string key)
         {
-            var db= new NorthwindEntities();
+            var db = new NorthwindEntities();
             var sonuc = db.Products.Where(x => x.ProductName.ToLower().Contains(key.ToLower()) ||
-                                               x.Category.CategoryName.ToLower().Contains(key.ToLower())).ToList();
+                                               x.Category.CategoryName.ToLower().Contains(key.ToLower())).Select(x => new ProductViewModel()
+                                               {
+                                                   ProductName = x.ProductName,
+                                                   UnitPrice = x.UnitPrice,
+                                                   Discontinued = x.Discontinued,
+                                                   CategoryName = x.Category.CategoryName,
+                                                   UnitsInStock = x.UnitsInStock,
+                                                   ProductID = x.ProductID,
+                                                   CategoryID = x.CategoryID
+                                               }).ToList();
 
             return Json(sonuc, JsonRequestBehavior.AllowGet);
         }

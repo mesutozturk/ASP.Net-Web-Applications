@@ -170,6 +170,7 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>NorthModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
