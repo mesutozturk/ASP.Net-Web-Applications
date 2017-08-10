@@ -8,7 +8,7 @@ namespace Yonetim.DAL
         public MyContext()
             : base("name=HaberCon")
         {
-            this.Database.CreateIfNotExists();
+            //this.Database.CreateIfNotExists();
         }
 
         public virtual DbSet<Haber> Haberler { get; set; }
