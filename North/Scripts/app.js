@@ -49,11 +49,3 @@ function urunleriekranabas(key, value) {
     $(tr).append(th).append(tdurunadi).append(tdfiyat).append(tdstok).append(tdsatis).append(tdduzenle)
         .appendTo($("#uruntablebody"));
 }
-//< tr >
-//<th scope="row">@sayac</th>
-//<td>@item.ProductName</td>
-//<td>@( $"{item.UnitPrice:c2}")</td>
-//<td>@item.UnitsInStock</td>
-//<td>@(!item.Discontinued ? Html.Raw("<span class='text-success'>Satışta</span>") : Html.Raw("<span class='text-danger'>Satışta degil</span>"))</td>
-//<td><a href="@Url.Action(" Duzenle", "Urun", new {id = item.ProductID})" class="btn btn-warning btn-block">Düzenle</a></td >
-//</tr >
