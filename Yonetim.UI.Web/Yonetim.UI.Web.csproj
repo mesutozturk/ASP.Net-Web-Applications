@@ -192,7 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HaberController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +253,8 @@
     <Content Include="Views\Shared\_NavHeaderPartial.cshtml" />
     <Content Include="Views\Shared\_NavbarRightPartial.cshtml" />
     <Content Include="Views\Shared\_SideBarPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Kategori\Ekle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -261,7 +265,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Haber\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Yonetim.BLL\Yonetim.BLL.csproj">
