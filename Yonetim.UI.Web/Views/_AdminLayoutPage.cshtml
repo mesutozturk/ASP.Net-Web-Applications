@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,8 +19,30 @@
 
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            @{Html.RenderAction("NavHeaderPartial", "Home");}
+            <!-- /.navbar-header -->
+            @{Html.RenderAction("NavRightPartial", "Home");}
+            <!-- /.navbar-top-links -->
+            @{Html.RenderAction("SideBarPartial", "Home");}
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
     </div>
 
     <!-- jQuery -->
