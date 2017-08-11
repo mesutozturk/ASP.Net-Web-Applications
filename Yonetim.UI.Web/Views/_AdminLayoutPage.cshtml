@@ -17,6 +17,8 @@
     <!-- Custom Fonts -->
     <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/b-print-1.3.1/cr-1.3.3/fc-3.2.2/fh-3.1.2/r-2.1.1/sc-1.4.2/datatables.min.css" />
+    <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -32,13 +34,7 @@
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        @RenderBody()
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
+                @RenderBody()
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -53,5 +49,7 @@
     <script src="~/vendor/metisMenu/metisMenu.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="~/dist/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/b-print-1.3.1/cr-1.3.3/fc-3.2.2/fh-3.1.2/r-2.1.1/sc-1.4.2/datatables.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
 </body>
 </html>

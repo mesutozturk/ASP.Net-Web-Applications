@@ -11,8 +11,9 @@ namespace Yonetim.Model.ViewModels
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(50)]
+        [StringLength(50,ErrorMessage = "Kategori adı en fazla 50 karakter olabilir")]
         public string Ad { get; set; }
+        [Display(Name = "Açıklama")]
         public string Aciklama { get; set; }
     }
 }

@@ -14,14 +14,20 @@ namespace Yonetim.UI.Web.Controllers
         // GET: Kategori
         public ActionResult Index()
         {
-            return View();
+            var model = new KategoriRepo().GetAll().Select(x => new KategoriViewModel()
+            {
+                Id = x.Id,
+                Ad = x.Ad,
+                Aciklama = x.Aciklama
+            }).ToList();
+            return View(model);
         }
 
         public ActionResult Ekle()
         {
             return View();
         }
-
+        [HttpPost]
         public ActionResult Ekle(KategoriViewModel model)
         {
             try

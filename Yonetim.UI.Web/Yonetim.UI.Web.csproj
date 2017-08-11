@@ -94,11 +94,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
     <Content Include="dist\css\sb-admin-2.css" />
     <Content Include="dist\css\sb-admin-2.min.css" />
     <Content Include="dist\js\sb-admin-2.js" />
     <Content Include="dist\js\sb-admin-2.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app.js" />
     <Content Include="vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
@@ -255,6 +257,7 @@
     <Content Include="Views\Shared\_SideBarPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Kategori\Ekle.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
