@@ -46,5 +46,44 @@ namespace Yonetim.UI.Web.Controllers
             }
 
         }
+
+        public ActionResult Duzenle(int? id)
+        {
+            if (id == null)
+                return RedirectToAction("Index");
+            var kategori = new KategoriRepo().GetByID(id.Value);
+            if (kategori == null)
+                return RedirectToAction("Index");
+            var model = new KategoriViewModel()
+            {
+                Id = kategori.Id,
+                Ad = kategori.Ad,
+                Aciklama = kategori.Aciklama
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Duzenle(KategoriViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("","Kategori güncelleme işleminde hata oluştu");
+                return View(model);
+            }
+            try
+            {
+                var kategori = new KategoriRepo().GetByID(model.Id);
+                kategori.Ad = model.Ad;
+                kategori.Aciklama = model.Aciklama;
+                new KategoriRepo().Update();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(model);
+            }
+
+        }
     }
 }

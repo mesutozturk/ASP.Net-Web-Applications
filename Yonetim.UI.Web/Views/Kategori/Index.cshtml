@@ -23,13 +23,13 @@
             <tbody>
                 @for (int i = 0; i < Model.Count; i++)
                 {
-                var kat = Model[i];
+                    var kat = Model[i];
                     <tr class='@(i%2==0?"cift":"tek")'>
-                        <th scope="row">@(i+1)</th>
+                        <th scope="row">@(i + 1)</th>
                         <td>@kat.Ad</td>
                         <td>@kat.Aciklama</td>
                         <td>
-                            <a href="#" class="btn btn-block btn-warning">
+                            <a href="@Url.Action("Duzenle","Kategori",new {id=kat.Id})" class="btn btn-block btn-warning">
                                 Düzenle
                             </a>
                         </td>

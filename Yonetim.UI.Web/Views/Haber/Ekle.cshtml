@@ -1,0 +1,49 @@
+﻿@model HaberViewModel
+@{
+    ViewBag.Title = "Yeni Haber ekle";
+    Layout = "~/Views/_AdminLayoutPage.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Yeni Haber Ekle</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Haberler
+                @Html.ValidationSummary()
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Ekle", "Haber", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Baslik, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", placeholder = "Haber Başlığı" })
+                            @Html.ValidationMessageFor(x => x.Baslik)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Kategoriler, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.ListBoxFor(x => x.Kategoriler, (List<SelectListItem>)ViewBag.Kategoriler, new { @class = "form-control" ,size=7})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Icerik, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            @Html.TextAreaFor(x => x.Icerik, new { @class = "form-control", placeholder = "İçerik" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success btn-block">Haberi Kaydet</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

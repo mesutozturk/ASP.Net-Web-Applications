@@ -2,6 +2,16 @@
     background-color: tomato;
     color: azure;
 }
+
 .cift {
     background-color: cornsilk;
+}
+
+.validation-summary-errors {
+    font-family: "Arial";
+    font-size: large;
+    color: tomato;
+    border: 2px solid white;
+    padding: 0 5px 0 5px;
+    background-color: royalblue;
 }

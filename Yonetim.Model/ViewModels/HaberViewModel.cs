@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Yonetim.Model.Entities;
 
 namespace Yonetim.Model.ViewModels
 {
@@ -20,5 +21,6 @@ namespace Yonetim.Model.ViewModels
         public int Hit { get; set; } = 0;
         public bool YayindaMi { get; set; } = false;
         public string Keywords { get; set; }
+        public List<Kategori> Kategoriler { get; set; }
     }
 }
