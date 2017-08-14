@@ -1,0 +1,45 @@
+﻿@model List<HaberViewModel>
+@{
+    ViewBag.Title = "Haberler";
+    Layout = "~/Views/_AdminLayoutPage.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <table id="tblhaber" class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Başlık</th>
+                    <th>İçerik</th>
+                    <th>Eklenme Tarihi</th>
+                    <th>Yayında mı?</th>
+                    <th>Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sayac = 0;}
+                @foreach (var item in Model)
+                {
+                    sayac++;
+                    <tr>
+                        <th scope="row">@sayac</th>
+                        <td>@item.Baslik</td>
+                        <td>
+                            @{
+                                string icerik = Html.Encode(item.Icerik);
+                            }
+                            @(icerik.Length < 100 ? $"{icerik}" : $"{icerik.Substring(0, 100)}")
+                        </td>
+                        <td>@($"{item.EklenmeZamani:dd MMMM yy}")</td>
+                        <td>@(item.YayindaMi ? Html.Raw("<span class='label label-success'>Yayında</span") : Html.Raw("<span class='label label-danger'>Yayında değil</span"))</td>
+                        <td>
+                            <a href="#" class="btn btn-block btn-warning">
+                                Düzenle
+                            </a>
+                        </td>
+                    </tr>
+             }
+            </tbody>
+        </table>
+    </div>
+</div>

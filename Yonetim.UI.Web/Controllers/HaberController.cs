@@ -16,7 +16,18 @@ namespace Yonetim.UI.Web.Controllers
         // GET: Haber
         public ActionResult Index()
         {
-            return View();
+            var model = new HaberRepo().GetAll().Select(x => new HaberViewModel()
+            {
+                Id = x.Id,
+                Kategoriler = x.Kategoriler.Select(y => y.Id).ToList(),
+                Baslik = x.Baslik,
+                Keywords = x.Keywords,
+                Icerik = x.Icerik,
+                YayindaMi = x.YayindaMi,
+                EklenmeZamani = x.EklenmeZamani,
+                Hit = x.Hit
+            }).ToList();
+            return View(model);
         }
 
         public ActionResult Ekle()
@@ -24,7 +35,7 @@ namespace Yonetim.UI.Web.Controllers
             ViewBag.Kategoriler = DropDownListDoldurucu.KategoriList();
             return View();
         }
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult Ekle(HaberViewModel model)
         {
             ViewBag.Kategoriler = DropDownListDoldurucu.KategoriList();
@@ -38,7 +49,7 @@ namespace Yonetim.UI.Web.Controllers
                 new HaberRepo().Insert(model);
                 return RedirectToAction("Index");
             }
-            catch(DbEntityValidationException ex)
+            catch (DbEntityValidationException ex)
             {
                 return View(model);
             }
