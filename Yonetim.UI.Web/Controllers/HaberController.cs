@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,21 +30,15 @@ namespace Yonetim.UI.Web.Controllers
             ViewBag.Kategoriler = DropDownListDoldurucu.KategoriList();
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("","Haber eklerken bir hata meydana geldi");
+                ModelState.AddModelError("", "Haber eklerken bir hata meydana geldi");
                 return View(model);
             }
             try
             {
-                new HaberRepo().Insert(new Haber()
-                {
-                    Baslik = model.Baslik,
-                    Icerik = model.Icerik,
-                    Keywords = model.Keywords
-                });
-
+                new HaberRepo().Insert(model);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(DbEntityValidationException ex)
             {
                 return View(model);
             }

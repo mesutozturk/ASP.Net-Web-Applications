@@ -21,6 +21,6 @@ namespace Yonetim.Model.ViewModels
         public int Hit { get; set; } = 0;
         public bool YayindaMi { get; set; } = false;
         public string Keywords { get; set; }
-        public List<Kategori> Kategoriler { get; set; }
+        public List<int> Kategoriler { get; set; }
     }
 }

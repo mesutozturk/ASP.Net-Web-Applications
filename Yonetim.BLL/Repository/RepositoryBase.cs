@@ -57,7 +57,7 @@ namespace Yonetim.BLL.Repository
             }
             catch (Exception ex)
             {
-                throw ex;
+                
             }
         }
     }
