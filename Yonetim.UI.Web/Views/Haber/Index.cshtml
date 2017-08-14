@@ -1,4 +1,5 @@
-﻿@model List<HaberViewModel>
+﻿@using Yonetim.BLL.Settings
+@model List<HaberViewModel>
 @{
     ViewBag.Title = "Haberler";
     Layout = "~/Views/_AdminLayoutPage.cshtml";
@@ -26,7 +27,7 @@
                         <td>@item.Baslik</td>
                         <td>
                             @{
-                                string icerik = Html.Encode(item.Icerik);
+                                string icerik = SiteSettings.GetPlainTextFromHtml(item.Icerik);
                             }
                             @(icerik.Length < 100 ? $"{icerik}" : $"{icerik.Substring(0, 100)}")
                         </td>
