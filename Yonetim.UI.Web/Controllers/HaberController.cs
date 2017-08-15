@@ -54,5 +54,56 @@ namespace Yonetim.UI.Web.Controllers
                 return View(model);
             }
         }
+
+        public ActionResult Duzenle(int? id)
+        {
+            if (id == null)
+                return RedirectToAction("Index");
+            var haber = new HaberRepo().GetByID(id.Value);
+            if (haber == null)
+                return RedirectToAction("Index");
+            var kategoriList = DropDownListDoldurucu.KategoriList();
+            foreach (var item in kategoriList)
+            {
+                if (haber.Kategoriler.Select(x => x.Id).Contains(int.Parse(item.Value)))
+                    item.Selected = true;
+            }
+            ViewBag.Kategoriler = kategoriList.OrderByDescending(x=>x.Selected);
+
+            var model = new HaberViewModel()
+            {
+                Icerik = haber.Icerik,
+                Id = haber.Id,
+                Kategoriler = haber.Kategoriler.Select(x => x.Id).ToList(),
+                Baslik = haber.Baslik,
+                Keywords = haber.Keywords,
+                YayindaMi = haber.YayindaMi,
+                EklenmeZamani = haber.EklenmeZamani
+            };
+
+            return View(model);
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public ActionResult Duzenle(HaberViewModel model)
+        {
+            ViewBag.Kategoriler = DropDownListDoldurucu.KategoriList();
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Haber düzenlenirken bir hata oluştu");
+                return View(model);
+            }
+            try
+            {
+                new HaberRepo().Update(model);
+                return RedirectToAction("Index");
+            }
+            catch (DbEntityValidationException e)
+            {
+                ModelState.AddModelError("", e.Message);
+                return View(model);
+            }
+        }
+
     }
 }

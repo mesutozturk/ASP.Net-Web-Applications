@@ -34,12 +34,12 @@
                         <td>@($"{item.EklenmeZamani:dd MMMM yy}")</td>
                         <td>@(item.YayindaMi ? Html.Raw("<span class='label label-success'>Yayında</span") : Html.Raw("<span class='label label-danger'>Yayında değil</span"))</td>
                         <td>
-                            <a href="#" class="btn btn-block btn-warning">
+                            <a href="@Url.Action("Duzenle","Haber",new{id=item.Id})" class="btn btn-block btn-warning">
                                 Düzenle
                             </a>
                         </td>
                     </tr>
-             }
+                                }
             </tbody>
         </table>
     </div>

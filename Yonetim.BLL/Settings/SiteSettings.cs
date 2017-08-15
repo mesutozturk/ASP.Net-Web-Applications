@@ -11,6 +11,8 @@ namespace Yonetim.BLL.Settings
     {
         public static string GetPlainTextFromHtml(string htmlString)
         {
+            if (string.IsNullOrEmpty(htmlString))
+                return string.Empty;
             string htmlTagPattern = "<.*?>";
             var regexCss = new Regex("(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
             htmlString = regexCss.Replace(htmlString, string.Empty);

@@ -96,7 +96,6 @@
                 undo: 'Geri al',
                 redo: 'Yeniden yap'
             }
-
         }
     });
 })(jQuery);
