@@ -1,4 +1,6 @@
-﻿.tek {
+﻿@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,700,800|Indie+Flower|Sedgwick+Ave+Display&subset=latin-ext');
+
+.tek {
     background-color: tomato;
     color: azure;
 }
@@ -14,4 +16,22 @@
     border: 2px solid white;
     padding: 0 5px 0 5px;
     background-color: royalblue;
+}
+/*
+font-family: 'Sedgwick Ave Display', cursive;
+font-family: 'Dosis', sans-serif;
+font-family: 'Indie Flower', cursive;
+*/
+.haberbaslik {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 35px;
+    color: darkblue;
+}
+.habericerik {
+    background-image: url("../img/defter.png");
+    background-repeat: repeat; 
+}
+.haberinfo {
+    font-family: 'Dosis', sans-serif;
+    font-size: larger;
 }

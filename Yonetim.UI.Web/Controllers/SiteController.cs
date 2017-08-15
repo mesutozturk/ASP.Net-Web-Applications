@@ -27,7 +27,8 @@ namespace Yonetim.UI.Web.Controllers
             if (id == null) return RedirectToAction("Index");
             var haber=new HaberRepo().GetByID(id.Value);
             if(haber==null) return RedirectToAction("Index");
-
+            haber.Hit++;
+            new HaberRepo().Update();
             return View(haber);
         }
     }
