@@ -64,8 +64,8 @@ namespace Yonetim.BLL.Repository
                     haber.Keywords = model.Keywords;
                     haber.YayindaMi = model.YayindaMi;
                     db.SaveChanges();
-                    haber.Kategoriler=new List<Kategori>();
-                    db.SaveChanges();
+
+                    haber.Kategoriler.Clear();
                     haber.Kategoriler = kategoriler;
                     db.SaveChanges();
 

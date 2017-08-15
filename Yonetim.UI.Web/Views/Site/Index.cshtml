@@ -1,0 +1,28 @@
+﻿@using Yonetim.BLL.Settings
+@model List<HaberViewModel>
+@{
+    ViewBag.Title = "Wissen Haber Portalı - Ana Sayfa";
+    Layout = "~/Views/_SiteLayoutPage.cshtml";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <dt class='text-primary'>@item.Baslik</dt>
+            <dd>
+                <p>
+                    <small>
+                        @{
+                            string icerik = SiteSettings.GetPlainTextFromHtml(item.Icerik);
+                        }
+                        @(icerik.Length < 200 ? $"{icerik}" : $"{icerik.Substring(0, 200)}")...
+                        <a href="@Url.Action("Haber", "Site", new {id = item.Id})" class="btn btn-success btn-block">
+                            Devamını oku <span class="badge">@item.Hit</span>
+                        </a>
+                    </small>
+                </p>
+            </dd>
+        </div>
+                            }
+
+</div>

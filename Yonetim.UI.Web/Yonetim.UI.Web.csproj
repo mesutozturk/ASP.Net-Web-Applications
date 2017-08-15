@@ -197,6 +197,7 @@
     <Compile Include="Controllers\HaberController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -263,6 +264,9 @@
     <Content Include="Views\Haber\Ekle.cshtml" />
     <Content Include="Views\Haber\Index.cshtml" />
     <Content Include="Views\Haber\Duzenle.cshtml" />
+    <Content Include="Views\_SiteLayoutPage.cshtml" />
+    <Content Include="Views\Site\Index.cshtml" />
+    <Content Include="Views\Site\Haber.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

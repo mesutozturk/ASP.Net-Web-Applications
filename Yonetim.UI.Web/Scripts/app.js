@@ -140,7 +140,7 @@ $("#tblhaber").DataTable({
 });
 $("#Icerik").summernote({
     lang: 'tr-TR',
-    height: 250,  
+    height: 400,  
     codemirror: { 
         theme: 'monokai'
     }
