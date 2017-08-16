@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="northapp">
+<head>
+    <meta charset="utf-8" />
+    <title>Anasayfa</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/site.css" rel="stylesheet" />
+
+    <script src="../Scripts/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="categoryCtrl" ng-cloak>
+        <input type="text" ng-model="giris" />
+        <label class="label label-primary">{{giris}}</label>
+        <br />
+        <input type="button" value="Kategorileri Getir" ng-click="getir()" />
+        {{kategoriler.length}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-hover" ng-if="kategoriler.length>0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Kategori Adı</th>
+                                <th>Açıklama</th>
+                                <th>Düzenle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(sayac,item) in kategoriler | filter:giris">
+                                <th>{{sayac+1}}</th>
+                                <th>{{item.CategoryName}}</th>
+                                <th>{{item.Description}}</th>
+                                <th>
+                                    <a href="#" class="btn btn-block btn-danger">
+                                        Düzenle
+                                    </a>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Scripts/appmodule.js"></script>
+    <script src="../Scripts/appcontroller.js"></script>
+</body>
+</html>
