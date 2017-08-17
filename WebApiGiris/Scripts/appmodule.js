@@ -1,5 +1,5 @@
 ﻿/// <reference path="angular.js"/>
-var app = angular.module("northapp", ["ngRoute"]);
+var app = angular.module("northapp", ["ngRoute", 'naif.base64']); // dependecy injection
 
 app.factory("api", function ($http) {
     var apiurl = "http://localhost:2148/api/";
@@ -9,14 +9,34 @@ app.factory("api", function ($http) {
                 url: apiurl + 'Category',
                 method: 'GET',
                 dataType: 'JSON'
-            }).then(function(response) {
+            }).then(function (response) {
                 success(response.data);
             });
         },
-        getcategorybyid:function(id, success) {
+        getcategorybyid: function (id, success) {
             $http({
-                url: apiurl + 'Category/'+id,
+                url: apiurl + 'Category/' + id,
                 method: 'GET',
+                dataType: 'JSON'
+            }).then(function (response) {
+                success(response.data);
+            });
+        },
+        updatecategory:function(model, success) {
+            $http({
+                url: apiurl + 'Category',
+                data:model,
+                method: 'PUT',
+                dataType: 'JSON'
+            }).then(function (response) {
+                success(response.data);
+            });
+        },
+        insertcategory: function (model, success) {
+            $http({
+                url: apiurl + 'Category',
+                data: model,
+                method: 'POST',
                 dataType: 'JSON'
             }).then(function (response) {
                 success(response.data);
@@ -25,7 +45,7 @@ app.factory("api", function ($http) {
     }
 });
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'Views/category.html',

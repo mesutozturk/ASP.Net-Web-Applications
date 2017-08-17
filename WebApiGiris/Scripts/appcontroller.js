@@ -12,14 +12,26 @@ app.controller("CategoryCtrl",
             });
         }
     });
-    //bower install angular-base64-upload
+//bower install angular-base64-upload
 app.controller("KategoriGuncelleCtrl",
     function ($scope, api, $routeParams) {
         $scope.kategori = {};
-        $scope.id = $routeParams.id;
+        $scope.message = null;
         api.getcategorybyid($routeParams.id,
             function (data) {
                 console.log(data);
                 $scope.kategori = data;
+                if ($scope.kategori.Picture == null) return;
+
             });
+        $scope.guncelle = function () {
+            //$scope.resim.base64;
+            if ($scope.resim != null)
+                $scope.kategori.Picture = $scope.resim.base64;
+            api.updatecategory($scope.kategori,
+                function (data) {
+                    console.log(data);
+                    $scope.message = data.message;
+                });
+        };
     });
