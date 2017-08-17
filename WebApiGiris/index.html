@@ -14,7 +14,28 @@
 <body>
     <div class="container">
         <div class="row">
-            Menü
+            <div class="header">
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#!/">North App</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#!main">Home</a></li>
+                                <li><a ng-href="#!kategoriekle">Kategori Ekle</a></li>
+                                <li><a ng-href="#!falan/">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div ng-view></div>
