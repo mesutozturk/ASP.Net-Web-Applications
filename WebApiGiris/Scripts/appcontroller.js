@@ -35,3 +35,8 @@ app.controller("KategoriGuncelleCtrl",
                 });
         };
     });
+
+app.controller("KategoriEkleCtrl",
+    function ($scope, api) {
+        
+    });

@@ -57,6 +57,11 @@ app.config(function ($routeProvider) {
             controller: 'KategoriGuncelleCtrl',
             controllerAs: 'kategoriguncelle'
         })
+        .when('/kategoriekle', {
+            templateUrl: 'views/kategoriekle.html',
+            controller: 'KategoriekleCtrl',
+            controllerAs: 'kategoriekle'
+        })
         .otherwise({
             redirectTo: '/'
         });

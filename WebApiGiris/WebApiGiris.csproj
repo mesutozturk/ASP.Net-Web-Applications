@@ -237,6 +237,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Views\category.html" />
+    <Content Include="Views\kategoriekle.html" />
     <Content Include="Views\kategoriguncelle.html" />
     <Content Include="Web.config" />
   </ItemGroup>
