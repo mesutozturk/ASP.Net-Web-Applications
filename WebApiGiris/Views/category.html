@@ -1,0 +1,35 @@
+﻿<div class="col-md-12" ng-cloak>
+    <input type="text" ng-model="giris" />
+    <label class="label label-primary">{{giris}}</label>
+    <br />
+    <input type="button" value="Kategorileri Getir" ng-click="getir()" />
+    {{kategoriler.length}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-hover" ng-if="kategoriler.length>0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kategori Adı</th>
+                            <th>Açıklama</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(sayac,item) in kategoriler | filter:giris">
+                            <th>{{sayac+1}}</th>
+                            <th>{{item.CategoryName}}</th>
+                            <th>{{item.Description}}</th>
+                            <th>
+                                <a href="#!kategoriguncelle/{{item.CategoryID}}" class="btn btn-block btn-danger">
+                                    Düzenle
+                                </a>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
